@@ -1,1 +1,1 @@
-A simple CRUD project
+A simple CRUD project (not anymore)
