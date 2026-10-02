@@ -1,34 +1,29 @@
-package com.example.crudSpringBoot.entity;
+package com.example.crudSpringBoot.dto;
 
-import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "student")
-public class Student {
+public class CreateStudentResponseDTO {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    //spring boot started validation
+
     private Long id;
+
+    public void setRollNo(Integer rollNo) {
+        this.rollNo = rollNo;
+    }
 
     private String name;
     private int age;
     private String email;
-    private int rollNo;
+    private Integer rollNo;
+
     private String subject;
-    private Boolean deleted;
+    private String message;
+
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-
-
-    public Boolean getDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(Boolean deleted) {
-        this.deleted = deleted;
-    }
 
     public Long getId() {
         return id;
@@ -37,6 +32,24 @@ public class Student {
     public void setId(Long id) {
         this.id = id;
     }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(LocalDateTime updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
+
 
     public String getName() {
         return name;
@@ -78,19 +91,11 @@ public class Student {
         this.subject = subject;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public String getMessage() {
+        return message;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
+    public void setMessage(String message) {
+        this.message = message;
     }
 }

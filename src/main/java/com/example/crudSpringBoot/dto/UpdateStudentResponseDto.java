@@ -1,34 +1,17 @@
-package com.example.crudSpringBoot.entity;
-
-import jakarta.persistence.*;
+package com.example.crudSpringBoot.dto;
 
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name = "student")
-public class Student {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class UpdateStudentResponseDto {
     private Long id;
-
     private String name;
     private int age;
     private String email;
     private int rollNo;
     private String subject;
-    private Boolean deleted;
-    private LocalDateTime createdAt;
+    private String message;
+
     private LocalDateTime updatedAt;
-
-
-    public Boolean getDeleted() {
-        return deleted;
-    }
-
-    public void setDeleted(Boolean deleted) {
-        this.deleted = deleted;
-    }
 
     public Long getId() {
         return id;
@@ -78,12 +61,12 @@ public class Student {
         this.subject = subject;
     }
 
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
+    public String getMessage() {
+        return message;
     }
 
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
+    public void setMessage(String message) {
+        this.message = message;
     }
 
     public LocalDateTime getUpdatedAt() {
